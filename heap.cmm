@@ -1,0 +1,62 @@
+int sift_down(int a[400], int i, int n)
+{
+	int j = i;
+	while (1)
+	{
+		if (2 * i + 1 < n && a[j] > a[2 * i + 1])
+			j = 2 * i + 1;
+		if (2 * i + 2 < n && a[j] > a[2 * i + 2])
+			j = 2 * i + 2;
+		if (i != j)
+		{
+			int t = a[i];
+			a[i] = a[j];
+			a[j] = t;
+			i = j;
+		}
+		else
+			return 0;
+	}
+	return 0;
+}
+
+int main()
+{
+	int a[40000];
+	int i = 0;
+	int n = read();
+	int m = n;
+	while (i < n)
+	{
+		a[i] = i;
+		write(a[i]);
+		i = i + 1;
+	}
+	
+	i = (n - 1) / 2;
+	while ( i = i - 1 && 1 && 1)
+	{
+		sift_down(a, i + 1, n);
+	}
+
+	i = 0;
+	while (i < n)
+	{
+		int p = a[0];
+		m = m - 1;
+		a[0] = a[m];
+		a[m] = p;
+
+		sift_down(a, 0, m);
+
+		i = i + 1;
+	}
+
+	i = 0;
+	while (i < n)
+	{
+		write(a[i]);
+		i = i + 1;
+	}
+	return 0;
+}

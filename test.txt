@@ -1,0 +1,53 @@
+struct sunicy {
+	int x;
+	int y[10];
+};
+
+int test(struct sunicy s)
+{
+	s.x = 10;
+	write(s.y[5]);
+	return 0;
+}
+
+int aaa(int x[10])
+{
+	x[1] = 1;
+}
+
+int main()
+{
+	struct sunicy x;
+	int m = 1;
+	int n;
+	x.x = 100;
+	x.y[5] = 7;
+	test(x);
+	write(x.x);
+	x.x = x.y[5] * x.y[5];
+	write(x.x);
+	m = 10;
+	m = m + 1;
+	n = m + 1;
+
+	n = m + 2;
+	n = n * 2;
+	n = n * 2;
+	n = n * 2;
+	n = n * 2;
+	m = n - 1;
+	m = n - 1;
+	m = n - 1;
+	m = n - 1;
+	m = n - 1;
+	write(n);
+
+	n = m < n && 1 < 2 + 2;
+	n = 1;
+	while (n < 10)
+	{
+		write(n < 6);
+		n = n + 1;
+	}
+	return 0;
+}

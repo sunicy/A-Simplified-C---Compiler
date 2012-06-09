@@ -1,0 +1,16 @@
+int main()
+{
+	int a[10];
+	int i = read();
+	int t;
+	write(i);
+	a[i] = i;
+
+	t = a[i];
+	a[i] = a[i+1];
+	a[i+1] = t;
+	write(a[i+1]);
+	write(a[i]);
+	return 0;
+
+}

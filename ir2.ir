@@ -1,0 +1,87 @@
+FUNCTION fact :
+PARAM t3
+PARAM t4
+RETURN #0
+FUNCTION mia :
+PARAM t5
+PARAM t6
+PARAM t7
+t8 := t5 + #48
+t9 := t8 + #4
+WRITE *t9
+t10 := t7 + #4
+WRITE *t10
+RETURN #0
+FUNCTION mian :
+PARAM t11
+PARAM t12
+PARAM t13
+DEC t14 3240
+DEC t15 60
+t18 := &t15 + #0
+t19 := t18 + #16
+t20 := t19 + #4
+*t20 := #5
+t21 := &t14 + #360
+t22 := t21 + #72
+t23 := t22 + #16
+*t23 := #6
+t24 := t11 + #48
+t25 := t24 + #4
+*t25 := #4
+t26 := &t15 + #56
+*t26 := #7
+ARG t17
+ARG t16
+t27 := CALL fact
+t12 := t27
+ARG t13
+ARG t12
+ARG t11
+t28 := CALL mia
+t16 := t28
+t29 := t13 + #4
+t30 := t11 + #56
+t31 := *t29 + *t30
+t17 := t31
+t32 := &t14 + #360
+t33 := t32 + #72
+t34 := t33 + #16
+t35 := &t15 + #0
+t36 := t35 + #32
+t37 := t36 + #12
+t38 := *t34 + *t37
+t16 := t38
+t39 := t11 + #0
+t40 := t39 + #16
+t41 := t40 + #4
+WRITE *t41
+t42 := t13 + #4
+WRITE *t42
+t43 := &t15 + #56
+WRITE *t43
+t44 := t13 + #4
+*t44 := #5
+RETURN #0
+FUNCTION main :
+DEC t45 60
+DEC t47 8
+t48 := &t45 + #0
+t49 := t48 + #16
+t50 := t49 + #4
+*t50 := #3
+t51 := &t47 + #4
+*t51 := #2
+t52 := &t47 + #4
+WRITE *t52
+ARG &t47
+ARG t46
+ARG &t45
+t53 := CALL mian
+t46 := t53
+t54 := &t45 + #48
+t55 := t54 + #4
+WRITE *t55
+t56 := &t47 + #4
+WRITE *t56
+RETURN #0

@@ -1,0 +1,13 @@
+#!/bin/bash
+# Made by Sunicy Mar, 2012
+
+BAK_PREFIX='lab3_'
+BAK_FNAME=$BAK_PREFIX`date "+%F_%H-%M"`.tar.bz2
+
+BAK_DIR="../bak/"
+
+echo Backup starts...
+tar -cvjf $BAK_DIR$BAK_FNAME *
+echo Backup finished.
+echo "All files are in Archive $BAK_DIR$BAK_FNAME"
+

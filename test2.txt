@@ -1,0 +1,20 @@
+struct a {
+	int x[10][10][10];
+};
+int main()
+{
+	struct a m;
+	int i;
+	m.x[i][i][i] = 10;
+	i = m.x[i][i][i];
+	write(i);
+	if (m.x[1][1][1])
+		write(12345);
+	else
+		write(54321);
+	if (1)
+		write(1);
+	i = (i == m.x[i][i][i]) > 10;
+	write(i);
+	return 0;
+}
