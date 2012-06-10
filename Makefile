@@ -5,9 +5,10 @@ CFLAGS=-g
 COMPILER_NAME=cmmc
 
 default: syntax.tab.o main.o gtree.o stable.o semantic.o \
-			interm.o imnode.o im_reduce.o
+			interm.o imnode.o im_reduce.o gencode.o
 	$(CC) -o $(COMPILER_NAME) syntax.tab.o main.o gtree.o \
-			stable.o semantic.o interm.o imnode.o im_reduce.o
+			stable.o semantic.o interm.o imnode.o im_reduce.o \
+			gencode.o
 
 syntax.tab.o: lexical.c syntax.tab.c
 	$(CC) $(CFLAGS) -c -lfl syntax.tab.c
@@ -32,6 +33,9 @@ imnode.o: imnode.c
 
 im_reduce.o: im_reduce.c
 	$(CC) $(CFLAGS) -c im_reduce.c
+
+gencode.o: gencode.c
+	$(CC) $(CFLAGS) -c gencode.c
 
 lexical.c: lexical.l 
 	flex -o lexical.c lexical.l

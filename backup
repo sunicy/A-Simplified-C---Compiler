@@ -1,7 +1,7 @@
 #!/bin/bash
 # Made by Sunicy Mar, 2012
 
-BAK_PREFIX='lab3_'
+BAK_PREFIX='lab4_'
 BAK_FNAME=$BAK_PREFIX`date "+%F_%H-%M"`.tar.bz2
 
 BAK_DIR="../bak/"

@@ -3,6 +3,7 @@
 #include "gtree.h"
 #include "semantic.h"
 #include "interm.h"
+#include "gencode.h"
 
 extern int yydebug;
 
@@ -73,7 +74,7 @@ int main(int argc, char** argv)
 		return -1;
 	
 	/* generate intermediate code! */
-	im_init(fout);	
+	im_init(NULL);	
 	interm_parse();
 
 	if (!print_reduced)
@@ -82,8 +83,11 @@ int main(int argc, char** argv)
 	im_reduce(print_reduced);
 
 	/* display the code! */
-	if (print_reduced)
-		im_display();
+	/*if (print_reduced)
+		im_display();*/
+
+	gc_init(fout);
+	gc_generate();
 
 	/* close file descriptor */
 	if (fout)

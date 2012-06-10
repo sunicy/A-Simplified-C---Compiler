@@ -4,7 +4,7 @@ struct a {
 int main()
 {
 	struct a m;
-	int i;
+	int i = read();
 	m.x[i][i][i] = 10;
 	i = m.x[i][i][i];
 	write(i);

@@ -1,7 +1,8 @@
 int sift_down(int a[400], int i, int n)
 {
 	int j = i;
-	while (1)
+	int f = 0;
+	while (f == 0)
 	{
 		if (2 * i + 1 < n && a[j] > a[2 * i + 1])
 			j = 2 * i + 1;
@@ -15,7 +16,7 @@ int sift_down(int a[400], int i, int n)
 			i = j;
 		}
 		else
-			return 0;
+			f = 1;
 	}
 	return 0;
 }
