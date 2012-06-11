@@ -1,3 +1,4 @@
+/* Heap sort from 0, 1, ..., n to n, n-1, ..., 1, 0 */
 int sift_down(int a[400], int i, int n)
 {
 	int j = i;
@@ -23,7 +24,7 @@ int sift_down(int a[400], int i, int n)
 
 int main()
 {
-	int a[40000];
+	int a[8000];
 	int i = 0;
 	int n = read();
 	int m = n;
