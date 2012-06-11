@@ -371,18 +371,23 @@ void gc_generate()
 		for (p = begin->next; p->ntype == IT_PARAM; p = p->next)
 			gc_new_var(p->unaryop.x->vid, offset += 4, 4); /* well, always 4B! */
 		offset = -4; /* let's reverse the offset to -4, -8... */
-		/* second, DEC if exists */
+		/* second, DEC if exists 
 		for (; p->ntype == IT_DEC; p = p->next)
 		{
 			gc_new_var(p->dec.x->vid, offset, p->dec.width);
 			offset -= p->dec.width;
-		}
+		}*/
 		/* thirdly, go through all the text to add variables */
 		q = p; /* where is the text? */
 		for (; p != end; p = p->next)
 		{
 			switch (p->ntype)
 			{
+				case IT_DEC: 
+					offset -= p->dec.width - 4;
+					gc_new_var(p->dec.x->vid, offset, p->dec.width);
+					offset -= 4;
+					break;
 				case IT_ASSIGN: 
 					if (gc_new_var(p->assign.left->vid, offset, 4)) /* well, 4B~ */
 						offset -= 4;

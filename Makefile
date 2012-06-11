@@ -44,7 +44,7 @@ syntax.tab.c: syntax.y
 	bison -dv syntax.y
 
 clean:
-	rm -f lexical.c syntax.tab.h syntax.tab.c *.o $(COMPILER_NAME)
+	rm -f lexical.c syntax.tab.h syntax.tab.c syntax.output *.o $(COMPILER_NAME)
 
 all: 
 	make clean
